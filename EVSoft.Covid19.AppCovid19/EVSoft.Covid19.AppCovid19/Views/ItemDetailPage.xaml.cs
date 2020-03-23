@@ -1,10 +1,7 @@
-﻿using System;
+﻿using EVSoft.Covid19.AppCovid19.Models;
+using EVSoft.Covid19.AppCovid19.ViewModels;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using EVSoft.Covid19.AppCovid19.Models;
-using EVSoft.Covid19.AppCovid19.ViewModels;
 
 namespace EVSoft.Covid19.AppCovid19.Views
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EVSoft.Covid19.AppCovid19.Models
+﻿namespace EVSoft.Covid19.AppCovid19.Models
 {
     public class Item
     {

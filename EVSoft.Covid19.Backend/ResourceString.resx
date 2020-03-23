@@ -122,6 +122,6 @@
     <comment>Muestra un resumen global</comment>
   </data>
   <data name="Covid19Countries" xml:space="preserve">
-    <value>https://corona.lmao.ninja/countries/</value>
+    <value>https://corona.lmao.ninja/countries</value>
   </data>
 </root>

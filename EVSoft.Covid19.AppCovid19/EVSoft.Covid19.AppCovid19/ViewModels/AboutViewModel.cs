@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -9,8 +8,8 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
+            Title = "Acerca";
+            OpenWebCommand = new Command(async () => await Browser.OpenAsync("http://evsoftconsultores.com"));
         }
 
         public ICommand OpenWebCommand { get; }

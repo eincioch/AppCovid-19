@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using EVSoft.Covid19.AppCovid19.Models;
 
 namespace EVSoft.Covid19.AppCovid19.ViewModels

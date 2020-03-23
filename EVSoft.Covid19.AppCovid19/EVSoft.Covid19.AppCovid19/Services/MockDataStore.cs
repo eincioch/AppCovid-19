@@ -1,8 +1,8 @@
-﻿using System;
+﻿using EVSoft.Covid19.AppCovid19.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EVSoft.Covid19.AppCovid19.Models;
 
 namespace EVSoft.Covid19.AppCovid19.Services
 {

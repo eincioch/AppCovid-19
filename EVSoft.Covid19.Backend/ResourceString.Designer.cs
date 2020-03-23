@@ -70,7 +70,7 @@ namespace EVSoft.Covid19.Backend {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/countries/.
+        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/countries.
         /// </summary>
         internal static string Covid19Countries {
             get {

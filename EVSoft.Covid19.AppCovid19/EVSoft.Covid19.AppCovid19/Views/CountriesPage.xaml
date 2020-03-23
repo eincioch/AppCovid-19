@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVSoft.Covid19.AppCovid19.Views.CountriesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:EVSoft.Covid19.Backend.Dominio;assembly=EVSoft.Covid19.Backend"
+    Title="Seleccione País"
+    mc:Ignorable="d">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            </Style>
+
+            <Style x:Key="TitleSpanStyle" TargetType="{x:Type Span}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+            </Style>
+
+            <Style x:Key="ContenidLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#757575" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="5,10,5,0" />
+                            <On Platform="iOS" Value="0,5" />
+                        </OnPlatform>
+                    </Setter.Value>
+
+                </Setter>
+                <Setter Property="Padding">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="0,0,0,-1" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource WhiteColor}" />
+                            <On Platform="iOS" Value="Transparent" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="OutlineColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource UCV_1}" />
+                            <On Platform="iOS" Value="{StaticResource UCV_1}" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Single">
+                            <On Platform="Android" Value="10" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <RefreshView
+            Command="{Binding ReloadCommand}"
+            IsRefreshing="{Binding IsBusy}"
+            RefreshColor="{StaticResource FondoStarMenu}">
+
+            <ScrollView>
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <ActivityIndicator
+                        HeightRequest="40"
+                        IsRunning="{Binding IsBusy}"
+                        WidthRequest="40" />
+
+                    <StackLayout Grid.Row="1" Margin="3">
+                        <CollectionView
+                            x:Name="collectionView"
+                            ItemsSource="{Binding Countries}"
+                            SelectionMode="None">
+
+                            <!--  ItemsSource="{Binding AusenciaEntities}"  -->
+
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" />
+                            </CollectionView.ItemsLayout>
+
+                            <d:CollectionView.ItemsSource>
+                                <x:Array Type="{x:Type models:Countrie}">
+                                    <models:Countrie country="China" />
+                                    <models:Countrie country="Italy" />
+                                    <models:Countrie country="Peru" />
+                                </x:Array>
+                            </d:CollectionView.ItemsSource>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Frame
+                                            Grid.Column="1"
+                                            HasShadow="True"
+                                            Style="{StaticResource FrameStyle}">
+
+                                            <Grid Padding="5,10,10,8" RowSpacing="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <!--  row 0  -->
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <!--  column 0  -->
+                                                </Grid.ColumnDefinitions>
+
+                                                <!--  País  -->
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    d:Text="{Binding country}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    Style="{StaticResource ContenidLabelStyle}">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Style="{StaticResource TitleSpanStyle}" Text="{Binding country}" />
+                                                            <Span Text=" / Hoy: Casos " />
+                                                            <Span
+                                                                Style="{StaticResource TitleSpanStyle}"
+                                                                Text="{Binding todayCases}"
+                                                                TextColor="Green" />
+                                                            <Span Text=", muertes " />
+                                                            <Span
+                                                                Style="{StaticResource TitleSpanStyle}"
+                                                                Text="{Binding todayDeaths}"
+                                                                TextColor="Red" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+
+                                            </Grid>
+
+                                        </Frame>
+
+                                    </Grid>
+
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+
+        </RefreshView>
+
+
+    </ContentPage.Content>
+
+</ContentPage>

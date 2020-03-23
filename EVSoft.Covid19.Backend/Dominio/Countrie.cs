@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EVSoft.Covid19.Backend.Dominio
+﻿namespace EVSoft.Covid19.Backend.Dominio
 {
-    class Countries
+    public class Countrie
     {
         public string country { get; set; }
         public int cases { get; set; }
