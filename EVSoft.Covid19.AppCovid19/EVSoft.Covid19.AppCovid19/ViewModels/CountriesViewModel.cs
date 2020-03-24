@@ -14,6 +14,7 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
     {
 		private readonly IServicesCovid19 _servicesCovid19;
 		private ICommand _reloadCommand;
+		public INavigation Navigation { get; set; }
 
 		private ObservableCollection<Countrie> _countries;
 
@@ -30,7 +31,9 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
 		public Countrie SelectCountrie
 		{
 			get { return _selectcountrie; }
-			set { _selectcountrie = value; }
+			set { _selectcountrie = value;
+				OnPropertyChanged();
+			}
 		}
 
 
@@ -38,12 +41,27 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
 			_reloadCommand ??
 			(_reloadCommand = new Command(async () => await LoadDataAsync().ConfigureAwait(true)));
 
-		
-		public CountriesViewModel()
+
+		private Command _navigateCommand; 
+		public Command CommandDetail { get { return _navigateCommand; } set { _navigateCommand = value; OnPropertyChanged(); } }
+
+		public CountriesViewModel(INavigation navigation)
 		{
+			Navigation = navigation;
+
 			_servicesCovid19 = new ServicesCovid19();
 
+			CommandDetail = new Command<Countrie>(async (model) => await ViewDetail(model).ConfigureAwait(true));
+
 			_ = LoadDataAsync();
+
+			
+		}
+
+		async Task ViewDetail(Countrie countrie)
+		{
+			await Navigation.PushAsync(new Views.CountrieDetailPage(new CountrieDetailViewModel(countrie, Navigation))).ConfigureAwait(true);
+			//await Application.Current.MainPage.DisplayAlert("Tapped", countrie.country, "OK").ConfigureAwait(true);
 		}
 
 		async Task LoadDataAsync()

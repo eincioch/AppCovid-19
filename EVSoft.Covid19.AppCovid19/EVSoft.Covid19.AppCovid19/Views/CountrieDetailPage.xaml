@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EVSoft.Covid19.AppCovid19.Views.CountrieDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding titleCountrie}"
+    mc:Ignorable="d">
+
+    <ContentPage.Resources>
+
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="LightSkyBlue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ContenidLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource BigSize}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+            </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="#757575" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="5,10,5,0" />
+                            <On Platform="iOS" Value="0,5" />
+                        </OnPlatform>
+                    </Setter.Value>
+
+                </Setter>
+                <Setter Property="Padding">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="0,0,0,-1" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource WhiteColor}" />
+                            <On Platform="iOS" Value="Transparent" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="OutlineColor">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="Android" Value="{StaticResource UCV_1}" />
+                            <On Platform="iOS" Value="{StaticResource UCV_1}" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Single">
+                            <On Platform="Android" Value="10" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Padding="10" HorizontalOptions="Center">
+
+                <Grid VerticalOptions="CenterAndExpand">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                        Grid.Row="0"
+                        Padding="3"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+
+                        <Image
+                            HeightRequest="35"
+                            Source="{Binding Countrie.countryInfo.flag}"
+                            WidthRequest="35" />
+
+                        <Label
+                            d:Text="{Binding country}"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding Countrie.country}" />
+                    </StackLayout>
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Casos / Cases" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        d:Text="308594"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.cases, StringFormat='{0:N0}'}"
+                        TextColor="Green" />
+
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Hoy Casos / Today Cases" />
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        d:Text="13069"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.todayCases, StringFormat='{0:N0}'}"
+                        TextColor="Red" />
+
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Muertes / Deaths" />
+                    <Label
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        d:Text="13069"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.deaths, StringFormat='{0:N0}'}"
+                        TextColor="Red" />
+
+                    <Label
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Hoy Muertes / Today Deaths" />
+                    <Label
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        d:Text="13069"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.todayDeaths, StringFormat='{0:N0}'}"
+                        TextColor="Red" />
+
+                    <Label
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Recuperados / Recovered" />
+                    <Label
+                        Grid.Row="10"
+                        Grid.Column="0"
+                        d:Text="95829"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.recovered, StringFormat='{0:N0}'}"
+                        TextColor="Blue" />
+
+                    <Label
+                        Grid.Row="11"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Activo / actived" />
+                    <Label
+                        Grid.Row="12"
+                        Grid.Column="0"
+                        d:Text="1584864476792"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.active}" />
+
+                    <Label
+                        Grid.Row="13"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Crítico / Critical" />
+                    <Label
+                        Grid.Row="14"
+                        Grid.Column="0"
+                        d:Text="1584864476792"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.critical}" />
+
+                    <Label
+                        Grid.Row="15"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Casos por un Millón / Cases Per One Million" />
+                    <Label
+                        Grid.Row="16"
+                        Grid.Column="0"
+                        d:Text="1584864476792"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.casesPerOneMillion}" />
+
+                </Grid>
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

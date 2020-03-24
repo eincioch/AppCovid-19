@@ -172,7 +172,7 @@
                         Grid.Row="6"
                         Grid.Column="0"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="Útima actualización / Date Updated" />
+                        Text="Útima actualización / Last Updated" />
                     <Label
                         Grid.Row="7"
                         Grid.Column="0"
@@ -183,7 +183,6 @@
                 </Grid>
 
             </StackLayout>
-
 
         </RefreshView>
     </ContentPage.Content>

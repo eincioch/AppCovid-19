@@ -19,7 +19,7 @@ namespace EVSoft.Covid19.AppCovid19.Views
         {
             InitializeComponent();
 
-            BindingContext = view = new CountriesViewModel();
+            BindingContext = view = new CountriesViewModel(this.Navigation);
         }
     }
 }

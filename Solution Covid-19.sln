@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Backend (Net Standard)", "01 Backend (Net Standard)", "{78D19CBF-05E7-4894-9079-C7319C8531CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSoft.Covid19.Backend", "EVSoft.Covid19.Backend\EVSoft.Covid19.Backend.csproj", "{50DC3B89-074B-4455-9867-E372C6A7AF6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVSoft.Covid19.Backend", "EVSoft.Covid19.Backend\EVSoft.Covid19.Backend.csproj", "{50DC3B89-074B-4455-9867-E372C6A7AF6C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Solucion Móvil (Xamarin.Forms)", "02 Solucion Móvil (Xamarin.Forms)", "{F497CFF2-2314-425F-B3BC-2A433956A4D1}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSoft.Covid19.AppCovid19.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSoft.Covid19.AppCovid19.iOS", "EVSoft.Covid19.AppCovid19\EVSoft.Covid19.AppCovid19.iOS\EVSoft.Covid19.AppCovid19.iOS.csproj", "{FDDC16BC-8193-4A85-A2EA-EAC19D837005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVSoft.Covid19.AppCovid19", "EVSoft.Covid19.AppCovid19\EVSoft.Covid19.AppCovid19\EVSoft.Covid19.AppCovid19.csproj", "{865DC43F-79DA-4A98-9BF4-81575E6C9143}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVSoft.Covid19.AppCovid19", "EVSoft.Covid19.AppCovid19\EVSoft.Covid19.AppCovid19\EVSoft.Covid19.AppCovid19.csproj", "{865DC43F-79DA-4A98-9BF4-81575E6C9143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppAndroid", "AppAndroid", "{8E9B31FE-9003-4885-AB16-E8857949215C}"
 EndProject

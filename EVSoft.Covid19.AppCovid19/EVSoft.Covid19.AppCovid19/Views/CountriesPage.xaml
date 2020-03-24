@@ -14,6 +14,13 @@
             <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontFamily" Value="{StaticResource FlexoBold}" />
                 <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource BigSize}" />
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            </Style>
+
+            <Style x:Key="SubTitleLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="{StaticResource MediumSize}" />
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
@@ -107,10 +114,11 @@
                         IsRunning="{Binding IsBusy}"
                         WidthRequest="40" />
 
-                    <StackLayout Grid.Row="1" Margin="3">
+                    <StackLayout Grid.Row="1" Margin="0,0,3,4">
                         <CollectionView
                             x:Name="collectionView"
                             ItemsSource="{Binding Countries}"
+                            SelectedItem="{Binding SelectCountrie, Mode=TwoWay}"
                             SelectionMode="None">
 
                             <!--  ItemsSource="{Binding AusenciaEntities}"  -->
@@ -121,9 +129,21 @@
 
                             <d:CollectionView.ItemsSource>
                                 <x:Array Type="{x:Type models:Countrie}">
-                                    <models:Countrie country="China" />
-                                    <models:Countrie country="Italy" />
-                                    <models:Countrie country="Peru" />
+                                    <models:Countrie
+                                        cases="81093"
+                                        country="China"
+                                        deaths="3270"
+                                        recovered="72703" />
+                                    <models:Countrie
+                                        cases="59138"
+                                        country="Italy"
+                                        deaths="5476"
+                                        recovered="7024" />
+                                    <models:Countrie
+                                        cases="363"
+                                        country="Peru"
+                                        deaths="5"
+                                        recovered="1" />
                                 </x:Array>
                             </d:CollectionView.ItemsSource>
 
@@ -137,7 +157,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
 
                                         <Frame
@@ -145,28 +165,48 @@
                                             HasShadow="True"
                                             Style="{StaticResource FrameStyle}">
 
-                                            <Grid Padding="5,10,10,8" RowSpacing="2">
+                                            <Grid Padding="10,10,10,10" RowSpacing="2">
+
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="Auto" />
                                                     <!--  row 0  -->
+                                                    <RowDefinition Height="Auto" />
+                                                    <!--  row 1  -->
+                                                    <RowDefinition Height="Auto" />
+                                                    <!--  row 2  -->
+                                                    <RowDefinition Height="65" />
+                                                    <!--  row 3  -->
                                                 </Grid.RowDefinitions>
 
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                     <!--  column 0  -->
+                                                    <ColumnDefinition Width="*" />
+                                                    <!--  column 1  -->
+                                                    <ColumnDefinition Width="*" />
+                                                    <!--  column 2  -->
                                                 </Grid.ColumnDefinitions>
 
-                                                <!--  País  -->
-                                                <Label
+                                                <StackLayout
                                                     Grid.Row="0"
-                                                    Grid.Column="0"
-                                                    d:Text="{Binding country}"
-                                                    HorizontalOptions="StartAndExpand"
-                                                    Style="{StaticResource ContenidLabelStyle}">
-                                                    <Label.FormattedText>
+                                                    Grid.ColumnSpan="3"
+                                                    Padding="3"
+                                                    HorizontalOptions="Center"
+                                                    Orientation="Horizontal">
+
+                                                    <Image
+                                                        HeightRequest="35"
+                                                        Source="{Binding countryInfo.flag}"
+                                                        WidthRequest="35" />
+
+                                                    <Label
+                                                        d:Text="{Binding country}"
+                                                        Style="{StaticResource TitleLabelStyle}"
+                                                        Text="{Binding country}">
+                                                        <!--<Label.FormattedText>
                                                         <FormattedString>
                                                             <Span Style="{StaticResource TitleSpanStyle}" Text="{Binding country}" />
-                                                            <Span Text=" / Hoy: Casos " />
+                                                            <Span Text=" / Confirm: Casos " />
                                                             <Span
                                                                 Style="{StaticResource TitleSpanStyle}"
                                                                 Text="{Binding todayCases}"
@@ -177,9 +217,96 @@
                                                                 Text="{Binding todayDeaths}"
                                                                 TextColor="Red" />
                                                         </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
+                                                    </Label.FormattedText>-->
+                                                    </Label>
+                                                </StackLayout>
 
+                                                <!--  País  -->
+
+
+
+                                                <!--  Cabeceras  -->
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource ContenidLabelStyle}"
+                                                    Text="Casos" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource ContenidLabelStyle}"
+                                                    Text="Muertes" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource ContenidLabelStyle}"
+                                                    Text="Recuperados" />
+
+                                                <!--  Valores  -->
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource SubTitleLabelStyle}"
+                                                    Text="{Binding cases, StringFormat='{0:N0}'}"
+                                                    TextColor="Green" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="1"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource SubTitleLabelStyle}"
+                                                    Text="{Binding deaths, StringFormat='{0:N0}'}"
+                                                    TextColor="Red" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource SubTitleLabelStyle}"
+                                                    Text="{Binding recovered, StringFormat='{0:N0}'}"
+                                                    TextColor="Blue" />
+
+                                                <FlexLayout
+                                                    Grid.Row="3"
+                                                    Grid.ColumnSpan="3"
+                                                    Margin="5"
+                                                    Direction="Row"
+                                                    JustifyContent="SpaceBetween"
+                                                    VerticalOptions="End"
+                                                    Wrap="Wrap">
+
+                                                    <Label
+                                                        FlexLayout.Basis="100%"
+                                                        FontAttributes="Italic"
+                                                        FontSize="10"
+                                                        Text="más información"
+                                                        TextColor="DimGray" />
+
+                                                    <BoxView
+                                                        Margin="0,8"
+                                                        BackgroundColor="#D8D8D8"
+                                                        FlexLayout.Basis="100%"
+                                                        HeightRequest="1" />
+
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        FontSize="12"
+                                                        Text="Ver detalles"
+                                                        TextColor="DarkBlue">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.CommandDetail, Source={x:Reference collectionView}}" CommandParameter="{Binding .}" />
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                    <Label
+                                                        FontAttributes="Bold"
+                                                        FontSize="12"
+                                                        HorizontalTextAlignment="End"
+                                                        Text="Ver historial"
+                                                        TextColor="DarkBlue" />
+
+                                                </FlexLayout>
                                             </Grid>
 
                                         </Frame>
@@ -195,7 +322,6 @@
             </ScrollView>
 
         </RefreshView>
-
 
     </ContentPage.Content>
 
