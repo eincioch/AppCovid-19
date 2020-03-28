@@ -77,7 +77,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Fuente" />
+                                <Span Text="Fuente: " />
                                 <Span Text=" " />
                                 <Span FontAttributes="Bold" Text="https://www.worldometers.info/coronavirus/" />
                                 <Span Text=" " />

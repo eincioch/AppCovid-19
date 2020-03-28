@@ -32,10 +32,10 @@
 
     <!--  Your Pages  -->
     <TabBar>
-        <Tab Title="Todo el Mundo" Icon="ic_mundo.png">
+        <Tab Title="Mundo / World" Icon="ic_mundo.png">
             <ShellContent ContentTemplate="{DataTemplate local:GlobalPage}" />
         </Tab>
-        <Tab Title="Por País" Icon="ic_pais.png">
+        <Tab Title="País / Country" Icon="ic_pais.png">
             <ShellContent ContentTemplate="{DataTemplate local:CountriesPage}" />
         </Tab>
         <Tab Title="Acerca" Icon="tab_about.png">

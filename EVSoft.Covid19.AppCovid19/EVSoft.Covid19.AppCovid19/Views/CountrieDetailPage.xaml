@@ -133,6 +133,8 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
@@ -260,6 +262,18 @@
                         Style="{StaticResource ContenidLabelStyle}"
                         Text="{Binding Countrie.casesPerOneMillion}" />
 
+                    <Label
+                        Grid.Row="17"
+                        Grid.Column="0"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="Muertes por un millón / Deaths Per One Million" />
+                    <Label
+                        Grid.Row="18"
+                        Grid.Column="0"
+                        d:Text="1584864476792"
+                        Style="{StaticResource ContenidLabelStyle}"
+                        Text="{Binding Countrie.deathsPerOneMillion}"
+                        TextColor="Red" />
                 </Grid>
 
             </StackLayout>

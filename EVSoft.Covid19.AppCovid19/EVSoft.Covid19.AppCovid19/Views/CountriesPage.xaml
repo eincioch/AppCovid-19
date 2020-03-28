@@ -6,7 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:EVSoft.Covid19.Backend.Dominio;assembly=EVSoft.Covid19.Backend"
-    Title="Seleccione País"
+    Title="Detalle por País"
     mc:Ignorable="d">
 
     <ContentPage.Resources>
