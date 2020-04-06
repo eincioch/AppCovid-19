@@ -109,11 +109,34 @@
         <RefreshView Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
 
             <ScrollView>
-                <StackLayout Padding="10" HorizontalOptions="Center">
+                <StackLayout Padding="15" HorizontalOptions="Center">
 
                     <Grid VerticalOptions="CenterAndExpand">
 
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -128,6 +151,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
+                        <!--  fecha  -->
                         <StackLayout
                             Grid.Row="0"
                             Grid.Column="0"
@@ -136,16 +160,15 @@
                             Orientation="Vertical">
 
                             <Image
-                                HeightRequest="60"
+                                HeightRequest="50"
                                 Source="img_mundo.png"
-                                WidthRequest="60" />
+                                WidthRequest="50" />
 
                             <Label
                                 HorizontalTextAlignment="Center"
                                 Style="{StaticResource TitleLabelStyle}"
-                                Text="Casos / Cases" />
+                                Text="Útima actualización / Last Updated" />
                         </StackLayout>
-
 
                         <Label
                             Grid.Row="1"
@@ -153,46 +176,215 @@
                             d:Text="308594"
                             HorizontalTextAlignment="Center"
                             Style="{StaticResource ContenidLabelStyle}"
-                            Text="{Binding All.cases, StringFormat='{0:N0}'}"
-                            TextColor="Green" />
+                            Text="{Binding fecha}" />
 
-                        <Label
+                        <BoxView
                             Grid.Row="2"
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            HeightRequest="1"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#8a9597" />
+
+                        <!--  cases  -->
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Casos / Cases" />
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            d:Text="1584864476792"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.cases, StringFormat='{0:N0}'}"
+                            TextColor="#0000cc" />
+
+                        <!--  todayCases  -->
+                        <Label
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Hoy Casos / Today Cases" />
+                        <Label
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            d:Text="9527"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.todayCases, StringFormat='{0:N0}'}"
+                            TextColor="#1919e6" />
+
+                        <!--  casesPerOneMillion  -->
+                        <Label
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Casos por un millón / Cases Per One Million" />
+                        <Label
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            d:Text="9527"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.casesPerOneMillion, StringFormat='{0:N2}'}"
+                            TextColor="#0000ff" />
+
+                        <BoxView
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            HeightRequest="1"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#8a9597" />
+
+                        <!--  deaths  -->
+                        <Label
+                            Grid.Row="10"
                             Grid.Column="0"
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Muertes / Deaths" />
                         <Label
-                            Grid.Row="3"
+                            Grid.Row="11"
                             Grid.Column="0"
                             d:Text="13069"
                             Style="{StaticResource ContenidLabelStyle}"
                             Text="{Binding All.deaths, StringFormat='{0:N0}'}"
-                            TextColor="Red" />
+                            TextColor="#cc0000" />
 
+                        <!--  todayDeaths  -->
                         <Label
-                            Grid.Row="4"
+                            Grid.Row="12"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Hoy Muertes / Today Deaths" />
+                        <Label
+                            Grid.Row="13"
+                            Grid.Column="0"
+                            d:Text="13069"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.todayDeaths, StringFormat='{0:N0}'}"
+                            TextColor="#e61919" />
+
+                        <!--  deathsPerOneMillion  -->
+                        <Label
+                            Grid.Row="14"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Muertes por un millón/ Deaths Per One Million" />
+                        <Label
+                            Grid.Row="15"
+                            Grid.Column="0"
+                            d:Text="13069"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.deathsPerOneMillion, StringFormat='{0:N2}'}"
+                            TextColor="#ff0000" />
+
+                        <BoxView
+                            Grid.Row="16"
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            HeightRequest="1"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#8a9597" />
+
+                        <!--  recovered  -->
+                        <Label
+                            Grid.Row="17"
                             Grid.Column="0"
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Recuperados / Recovered" />
                         <Label
-                            Grid.Row="5"
+                            Grid.Row="18"
                             Grid.Column="0"
                             d:Text="95829"
                             Style="{StaticResource ContenidLabelStyle}"
                             Text="{Binding All.recovered, StringFormat='{0:N0}'}"
-                            TextColor="Blue" />
+                            TextColor="#009624" />
 
+                        <!--  active  -->
                         <Label
-                            Grid.Row="6"
+                            Grid.Row="19"
                             Grid.Column="0"
                             Style="{StaticResource TitleLabelStyle}"
-                            Text="Útima actualización / Last Updated" />
+                            Text="Activos / Active" />
                         <Label
-                            Grid.Row="7"
+                            Grid.Row="20"
                             Grid.Column="0"
-                            d:Text="1584864476792"
+                            d:Text="694426"
                             Style="{StaticResource ContenidLabelStyle}"
-                            Text="{Binding fecha}" />
+                            Text="{Binding All.active, StringFormat='{0:N0}'}"
+                            TextColor="#13a837" />
+
+                        <!--  critical  -->
+                        <Label
+                            Grid.Row="21"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Crítico / Critical" />
+                        <Label
+                            Grid.Row="22"
+                            Grid.Column="0"
+                            d:Text="694426"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.critical, StringFormat='{0:N0}'}"
+                            TextColor="Accent" />
+
+                        <BoxView
+                            Grid.Row="23"
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            HeightRequest="1"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#8a9597" />
+
+                        <!--  tests  -->
+                        <Label
+                            Grid.Row="24"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Pruebas / Tests" />
+                        <Label
+                            Grid.Row="25"
+                            Grid.Column="0"
+                            d:Text="694426"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.tests, StringFormat='{0:N0}'}"
+                            TextColor="#0096d2" />
+
+                        <!--  testsPerOneMillion  -->
+                        <Label
+                            Grid.Row="26"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Pruebas por un millón / Tests PerOneMillion" />
+                        <Label
+                            Grid.Row="27"
+                            Grid.Column="0"
+                            d:Text="694426"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.testsPerOneMillion, StringFormat='{0:N2}'}"
+                            TextColor="#158dbd" />
+
+                        <BoxView
+                            Grid.Row="28"
+                            Grid.Column="0"
+                            CornerRadius="10"
+                            HeightRequest="1"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#8a9597" />
+
+                        <!--  affectedCountries  -->
+                        <Label
+                            Grid.Row="29"
+                            Grid.Column="0"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Países afectados / Affected Countries" />
+                        <Label
+                            Grid.Row="30"
+                            Grid.Column="0"
+                            d:Text="205"
+                            Style="{StaticResource ContenidLabelStyle}"
+                            Text="{Binding All.affectedCountries, StringFormat='{0:N0}'}"
+                            TextColor="#f04500" />
 
                     </Grid>
 

@@ -77,5 +77,14 @@ namespace EVSoft.Covid19.Backend {
                 return ResourceManager.GetString("Covid19Countries", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/v2/historical.
+        /// </summary>
+        internal static string Covid19Historical {
+            get {
+                return ResourceManager.GetString("Covid19Historical", resourceCulture);
+            }
+        }
     }
 }

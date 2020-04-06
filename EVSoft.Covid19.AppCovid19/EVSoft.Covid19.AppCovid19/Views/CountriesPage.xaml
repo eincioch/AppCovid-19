@@ -115,6 +115,11 @@
                         WidthRequest="40" />
 
                     <StackLayout Grid.Row="1" Margin="0,0,3,4">
+                        <SearchBar
+                            x:Name="searchBar"
+                            SearchCommand="{Binding PerformSearch}"
+                            SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
+
                         <CollectionView
                             x:Name="collectionView"
                             ItemsSource="{Binding Countries}"
@@ -304,7 +309,11 @@
                                                         FontSize="12"
                                                         HorizontalTextAlignment="End"
                                                         Text="Ver historial"
-                                                        TextColor="DarkBlue" />
+                                                        TextColor="DarkBlue">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.CommandHistorical, Source={x:Reference collectionView}}" CommandParameter="{Binding .}" />
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
 
                                                 </FlexLayout>
                                             </Grid>

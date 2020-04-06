@@ -15,6 +15,7 @@ namespace EVSoft.Covid19.Backend.Dominio
         public int? critical { get; set; }
         public double? casesPerOneMillion { get; set; }
         public double? deathsPerOneMillion { get; set; }
+        public long updated { get; set; }
     }
 
     public class Countryinfo

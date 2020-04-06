@@ -124,4 +124,8 @@
   <data name="Covid19Countries" xml:space="preserve">
     <value>https://corona.lmao.ninja/countries</value>
   </data>
+  <data name="Covid19Historical" xml:space="preserve">
+    <value>https://corona.lmao.ninja/v2/historical</value>
+    <comment>Get a country's time series using a country iso code, country ID, or of course, country name</comment>
+  </data>
 </root>

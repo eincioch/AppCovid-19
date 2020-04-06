@@ -1,6 +1,7 @@
 ﻿using EVSoft.Covid19.Backend.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using Xamarin.Forms;
 
@@ -20,7 +21,6 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
             }
         }
 
-
         public Countrie Countrie
         {
             get { return _countrie; }
@@ -29,14 +29,46 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
             }
         }
 
+        private string _fecha;
+
+        public string fecha
+        {
+            get { return _fecha; }
+            set
+            {
+                _fecha = value;
+                OnPropertyChanged();
+            }
+        }
         public INavigation Navigation { get; set; }
 
         public CountrieDetailViewModel(Countrie countrie, INavigation navigation)
         {
-            Navigation = navigation;
+            try
+            {
+                IsBusy = true;
+                Navigation = navigation;
 
-            titleCountrie = $"Countrie {countrie.country}";
-            Countrie = countrie;
+                titleCountrie = $"Countrie {countrie.country}";
+
+                System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+                dtDateTime = dtDateTime.AddMilliseconds(countrie.updated).ToLocalTime();
+
+                //DateTime dt = new DateTime(All.updated);
+                fecha = dtDateTime.ToString();
+
+                Countrie = countrie;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Debug.WriteLine(@"\tError {0}", ex.Message);
+            }
+            finally {
+                IsBusy = false;
+            }
 
         }
 

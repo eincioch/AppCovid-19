@@ -7,6 +7,8 @@ namespace EVSoft.Covid19.Backend.Services
     public interface IServicesCovid19
     {
         Task<All> GetAllAsync();
-        Task<ObservableCollection<Countrie>> GetCountrieAsync(string countrie = "");
+        Task<ObservableCollection<Countrie>> GetCountriesAsync();
+        Task<Countrie> GetCountrieAsync(string countrie);
+        Task<Historical> GetHistoricalAsync(string countrie = "");
     }
 }
