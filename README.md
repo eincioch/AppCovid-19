@@ -72,7 +72,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
     <td>Opciones</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/pais.png" width="230" height="380"></td>
+    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/historial.png" width="230" height="380"></td>
   </tr>
 </table>
 
