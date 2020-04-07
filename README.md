@@ -39,7 +39,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
     <td>LogIn</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/resumen.png" width="200" height="350"></td>
+    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/resumen.png" width="230" height="380"></td>
   </tr>
 </table>
 
@@ -50,71 +50,29 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
     <td>Opciones</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/countrie.png" width="200" height="350"></td>
+    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/countrie.png" width="230" height="380"></td>
   </tr>
 </table>
 
-# Calificaciones 
+# Detalle al seleccionar un País
+
 <table class="egt">
   <tr>
-    <td>Calificativos</td>
-    <td>Seleccion Docente</td>
-    <td>Seleccion Curso</td>
-    <td>Resultados</td>
+    <td>Opciones</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Notas.png" width="200" height="350"></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Notas01.png" width="200" height="350"></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Notas02.png" width="200" height="350"></td></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Notas03.png" width="200" height="350"></td>
+    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/pais.png" width="230" height="380"></td>
   </tr>
 </table>
 
-# Méritos / Deméritos
-<table class="egt">
-  <tr>
-    <td>Merito</td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Merito.png" width="200" height="350"></td>
-  </tr>
-</table>
+# Historial evolución por País, día a día
 
-# Horario
 <table class="egt">
   <tr>
-    <td>Horario</td>
+    <td>Opciones</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Horario.png" width="450" height="250"></td>
-  </tr>
-</table>
-
-# Reportar Bullying 
-<table class="egt">
-  <tr>
-    <td>Bullying</td>
-    <td>Seleccion Tipo de Bullyinge</td>
-    <td>Seleccion Nivel Academico</td>
-    <td>Condición</td>
-    <td>Envio</td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Bullying.png" width="200" height="350"></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Bullying01.png" width="200" height="350"></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Bullying02.png" width="200" height="350"></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Bullying03.png" width="200" height="350"></td></td>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Bullying04.png" width="200" height="350"></td>
-  </tr>
-</table>
-
-# Comunicados
-<table class="egt">
-  <tr>
-    <td>Comunicados</td>
-  </tr>
-  <tr>
-    <td><img src="https://github.com/eincioch/appcovid-19/blob/master/Screenshot/Comunica.png" width="200" height="350"></td>
+    <td><img src="https://github.com/eincioch/AppCovid-19/blob/master/screen/pais.png" width="230" height="380"></td>
   </tr>
 </table>
 
