@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Covid19All" xml:space="preserve">
-    <value>https://corona.lmao.ninja/all</value>
+    <value>https://corona.lmao.ninja/v2/all?yesterday=false</value>
     <comment>Muestra un resumen global</comment>
   </data>
   <data name="Covid19Countries" xml:space="preserve">
-    <value>https://corona.lmao.ninja/countries</value>
+    <value>https://corona.lmao.ninja/v2/countries?yesterday=false</value>
+  </data>
+  <data name="Covid19CountriesPeru" xml:space="preserve">
+    <value>https://corona.lmao.ninja/v2/countries/</value>
   </data>
   <data name="Covid19Historical" xml:space="preserve">
     <value>https://corona.lmao.ninja/v2/historical</value>

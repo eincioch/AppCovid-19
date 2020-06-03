@@ -54,7 +54,7 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
 
                 All = await _servicesCovid19.GetAllAsync().ConfigureAwait(true);
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-                dtDateTime = dtDateTime.AddMilliseconds(All.updated).ToLocalTime();
+                dtDateTime = dtDateTime.AddMilliseconds(All.get_Update()).ToLocalTime();
 
                 //DateTime dt = new DateTime(All.updated);
                 fecha = dtDateTime.ToString();

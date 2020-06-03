@@ -61,7 +61,7 @@ namespace EVSoft.Covid19.Backend {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/all.
+        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/v2/all?yesterday=false.
         /// </summary>
         internal static string Covid19All {
             get {
@@ -70,11 +70,20 @@ namespace EVSoft.Covid19.Backend {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/countries.
+        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/v2/countries?yesterday=false.
         /// </summary>
         internal static string Covid19Countries {
             get {
                 return ResourceManager.GetString("Covid19Countries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://corona.lmao.ninja/v2/countries/.
+        /// </summary>
+        internal static string Covid19CountriesPeru {
+            get {
+                return ResourceManager.GetString("Covid19CountriesPeru", resourceCulture);
             }
         }
         

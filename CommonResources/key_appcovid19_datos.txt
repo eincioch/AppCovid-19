@@ -7,3 +7,9 @@ C:\Users\Enrique\AppData\Local\Xamarin\Mono for Android\Keystore
 Alias: covid19
 
 Key: F9907088-72A6-4521-EV06-365SOFT6249A
+
+🔴 App Covid-19 Información  (versión 5)
+
+👨‍💻 Analice en tiempo real los casos de Covid-19, y manténgase informado.
+
+📲 Descarga YA! https://appcovid19ev.web.app

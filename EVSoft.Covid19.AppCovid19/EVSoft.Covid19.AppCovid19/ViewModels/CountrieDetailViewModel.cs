@@ -49,10 +49,10 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
                 IsBusy = true;
                 Navigation = navigation;
 
-                titleCountrie = $"Countrie {countrie.country}";
+                titleCountrie = $"Countrie {countrie.Country}";
 
                 System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-                dtDateTime = dtDateTime.AddMilliseconds(countrie.updated).ToLocalTime();
+                dtDateTime = dtDateTime.AddMilliseconds(countrie.get_Update()).ToLocalTime();
 
                 //DateTime dt = new DateTime(All.updated);
                 fecha = dtDateTime.ToString();

@@ -27,10 +27,12 @@ namespace EVSoft.Covid19.Backend.Services
 
                     var response = await httpClient.SendAsync(request).ConfigureAwait(false);
 
+
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        var all = JsonConvert.DeserializeObject<All>(content);
+                        var all = JsonConvert.DeserializeObject<All>(content, Converter.Settings);
+                        
                         return all;
                     }
                     else
@@ -67,7 +69,7 @@ namespace EVSoft.Covid19.Backend.Services
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        var countries = JsonConvert.DeserializeObject<ObservableCollection<Countrie>>(content);
+                        var countries = JsonConvert.DeserializeObject<ObservableCollection<Countrie>>(content, Converter.Settings);
                         return countries;
                     }
                     else
@@ -89,7 +91,7 @@ namespace EVSoft.Covid19.Backend.Services
             try
             {
 
-                var uri = $"{ResourceString.Covid19Countries}/{countrie}";
+                var uri = $"{ResourceString.Covid19CountriesPeru}{countrie}?yesterday=false";
                 
 
                 using (HttpClient httpClient = new HttpClient())
@@ -105,7 +107,7 @@ namespace EVSoft.Covid19.Backend.Services
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                        var countri = JsonConvert.DeserializeObject<Countrie>(content);
+                        var countri = JsonConvert.DeserializeObject<Countrie>(content, Converter.Settings);
                         return countri;
                     }
                     else
@@ -166,7 +168,7 @@ namespace EVSoft.Covid19.Backend.Services
             }
         }
 
-        //https://app.quicktype.io/
+        //  
         internal static class Converter
         {
             public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings

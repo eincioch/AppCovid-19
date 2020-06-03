@@ -47,7 +47,7 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
         async Task LoadDataAsync(Countrie countrie)
         {
             Countrie = countrie;
-            Historicals = await _servicesCovid19.GetHistoricalAsync(countrie.country).ConfigureAwait(true);
+            Historicals = await _servicesCovid19.GetHistoricalAsync(countrie.Country).ConfigureAwait(true);
         }
     }
 }

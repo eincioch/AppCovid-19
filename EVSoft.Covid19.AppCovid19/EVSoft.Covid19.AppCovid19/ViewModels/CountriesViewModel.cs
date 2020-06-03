@@ -59,18 +59,26 @@ namespace EVSoft.Covid19.AppCovid19.ViewModels
 					Countrie = await _servicesCovid19.GetCountrieAsync(query).ConfigureAwait(true);
 					if(Countrie != null)
 					{
-						Countries = new ObservableCollection<Countrie>() { new Countrie() { country=Countrie.country,
-																							countryInfo = new Countryinfo(){  flag = Countrie.countryInfo.flag},
-																							cases =Countrie.cases,
-																							todayCases =Countrie.todayCases,
-																							deaths=Countrie.deaths,
-																							todayDeaths=Countrie.todayDeaths ,
-																							recovered=Countrie.recovered ,
-																							active =Countrie.active,
-																							critical=Countrie.critical,
-																							casesPerOneMillion=Countrie.casesPerOneMillion,
-																							deathsPerOneMillion=Countrie.deathsPerOneMillion ,
-																							updated=Countrie.updated
+						Countries = new ObservableCollection<Countrie>() { new Countrie() { Country=Countrie.Country,
+																							Population=Countrie.Population,
+																							Continent=Countrie.Continent,
+																							CountryInfo = new CountryInfo(){  Flag = Countrie.CountryInfo.Flag},
+																							Cases =Countrie.Cases,
+																							TodayCases =Countrie.TodayCases,
+																							CasesPerOneMillion=Countrie.CasesPerOneMillion,
+																							Deaths=Countrie.Deaths,
+																							TodayDeaths=Countrie.TodayDeaths ,
+																							DeathsPerOneMillion=Countrie.DeathsPerOneMillion ,
+																							Recovered=Countrie.Recovered ,
+																							TodayRecovered=Countrie.TodayRecovered,
+																							RecoveredPerOneMillion=Countrie.RecoveredPerOneMillion,
+																							Active =Countrie.Active,
+																							ActivePerOneMillion=Countrie.ActivePerOneMillion,
+																							Critical=Countrie.Critical,
+																							CriticalPerOneMillion=Countrie.CriticalPerOneMillion,
+																							Tests=Countrie.Tests,
+																							TestsPerOneMillion = Countrie.TestsPerOneMillion,
+																							Updated=Countrie.Updated
 																							} };
 					}
 					else
