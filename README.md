@@ -1,6 +1,6 @@
-# App Covid-19 para ver los casos actuales y más cosas sobre COVID-19 o la cepa Novel Coronavirus
+# App Covid-19 para ver los casos actuales y mÃ¡s cosas sobre COVID-19 o la cepa Novel Coronavirus
 
-App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la cepa Novel Coronavirus.
+App Covid-19 para ver los casos actuales en el mundo y mÃ¡s sobre COVID-19 o la cepa Novel Coronavirus.
 
 # Desarrollado por
 
@@ -11,7 +11,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
   </tr>
   <tr>
     <td>EV-Soft Consultores</td>
-    <td>Enrique Incio Chapilliquén</td></td>
+    <td>Enrique Incio ChapilliquÃ©n</td></td>
   </tr>
 </table>
 
@@ -20,12 +20,12 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
 <table class="egt">
   <tr>
     <td>IDE</td>
-    <td>Tecnología</td>
-    <td>Versión</td>
+    <td>TecnologÃ­a</td>
+    <td>VersiÃ³n</td>
     <td>Dispositivos despliegle</td>
   </tr>
   <tr>
-    <td>MS Visual Studio Enterprise 2019 versión 16.5.2</td>
+    <td>MS Visual Studio Enterprise 2019 versiÃ³n 16.5.2</td>
     <td>Xamarin.Form</td></td>
     <td>4.5.0.530</td></td>
     <td>for Android y iOS</td></td>
@@ -43,7 +43,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
   </tr>
 </table>
 
-# Listado de Countrie (País)
+# Listado de Countrie (PaÃ­s)
 
 <table class="egt">
   <tr>
@@ -54,7 +54,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
   </tr>
 </table>
 
-# Detalle al seleccionar un País
+# Detalle al seleccionar un PaÃ­s
 
 <table class="egt">
   <tr>
@@ -65,7 +65,7 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
   </tr>
 </table>
 
-# Historial evolución por País, día a día
+# Historial evoluciÃ³n por PaÃ­s, dÃ­a a dÃ­a
 
 <table class="egt">
   <tr>
@@ -88,4 +88,4 @@ App Covid-19 para ver los casos actuales en el mundo y más sobre COVID-19 o la c
   </tr>
 </table>
  
-# EV-Soft Consultores © 2019
+# EV-Soft Consultores Â© 2020
